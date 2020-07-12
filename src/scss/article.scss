@@ -1,0 +1,75 @@
+.article {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: $black;
+    line-height: 1.4;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 500;
+      margin: 2rem 0;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      text-align: left;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .spotlight {
+      padding: 1rem 0;
+      
+      &-danger,
+      &-warning {
+        background-color: rgba($red, .2);
+        border: 2px solid $red;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      &-part {
+        border-bottom: 1px solid $dark-2;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      &-warning {
+        margin-top: 2rem;
+        background-color: rgba($yellow, .2);
+        border: 2px solid $yellow;
+      }
+    }
+  }
+
+  .button {
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: $dark-1;
+    cursor: pointer;
+
+    > span {
+      margin-right: 1rem;
+    }
+  }
+}
