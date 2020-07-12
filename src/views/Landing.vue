@@ -1,5 +1,8 @@
 <template>
-  <div class="landing-container">
+  <div
+    class="landing landing-container"
+    :class="{ passed: status === true, failed: status === false }"
+  >
     <Scanner />
     <div
       v-if="status !== null"
@@ -33,6 +36,9 @@ export default class Landing extends Vue {
     token: FormState["token"];
   }) => Promise<FormResponse>;
 
+  @Action("resetToken", { namespace: "form" })
+  private resetToken!: () => void;
+
   @Getter("endpoint", { namespace: "app" })
   private endpoint!: string;
 
@@ -41,20 +47,33 @@ export default class Landing extends Vue {
 
   @Watch("token")
   private async onTokenChange(token: string) {
-    const res = (await this.verifyToken({
-      endpoint: this.endpoint,
-      token: token
-    })) as { fill: string; status: string };
+    if (token) {
+      this.status = null;
 
-    if (!res.fill) {
-      this.$router.push({ name: "Fill" });
-    } else if (res.status) {
-      this.status = true;
-    } else {
-      this.status = false;
+      const res = (await this.verifyToken({
+        endpoint: this.endpoint,
+        token: token
+      })) as { fill: string; status: string };
+
+      if (!res.fill) {
+        this.$router.push({ name: "Fill" });
+      } else if (res.status) {
+        this.status = true;
+      } else {
+        this.status = false;
+      }
+
+      this.resetScanner();
     }
   }
 
   private status: boolean | null = null;
+
+  private resetScanner(): void {
+    setTimeout(() => {
+      this.status = null;
+      this.resetToken();
+    }, 2000);
+  }
 }
 </script>

@@ -1,0 +1,39 @@
+.landing {
+  &-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &.passed,
+    &.failed {
+      animation: fadeOut 3s ease-in-out;
+    }
+
+    &.passed {
+      background-color: $green;
+    }
+
+    &.failed {
+      background-color: $red;
+    }
+  }
+
+  > .scanner-container {
+    margin: 1rem;
+  }
+
+  > .status-icon {
+    position: absolute;
+    font-size: 128px;
+    color: $red;
+    animation: fadeOut 2s ease-in-out;
+    animation-fill-mode: forwards;
+
+    &.passed {
+      color: $green;
+    }
+  }
+}
