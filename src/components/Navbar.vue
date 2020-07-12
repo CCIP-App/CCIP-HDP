@@ -4,7 +4,7 @@
       <li
         v-for="step in routeList
           .filter(route => route.meta.type === 'Step')
-          .sort(route => route.meta.index)"
+          .sort((a, b) => (a.meta.index > b.meta.index ? 1 : -1))"
         :key="step.name"
         :class="{ active: $route.meta.index <= step.meta.index }"
         class="step"
