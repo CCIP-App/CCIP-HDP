@@ -11,6 +11,9 @@ import { Action } from "vuex-class";
 
 import metadataParser from "markdown-yaml-metadata-parser";
 
+import MarkdownIt from "markdown-it";
+import MarkdownItContainer from "markdown-it-container";
+
 import { AppState } from "@/store/types/app.type";
 import { DeclarationState } from "@/store/types/declaration.type";
 
@@ -37,12 +40,19 @@ export default class App extends Vue {
 
   private created(): void {
     const HDP = metadataParser(rawHDP);
+    const mdParser = new MarkdownIt();
+    mdParser
+      .use(MarkdownItContainer, "spotlight-part")
+      .use(MarkdownItContainer, "spotlight-danger")
+      .use(MarkdownItContainer, "spotlight-warning");
 
     this.register({
       title: HDP.metadata.title,
       endpoint: HDP.metadata.endpoint
     });
-    this.setContent(HDP.content);
+    this.setContent(
+      mdParser.render(HDP.content).replace(/spotlight/gm, "spotlight spotlight")
+    );
   }
 }
 </script>
