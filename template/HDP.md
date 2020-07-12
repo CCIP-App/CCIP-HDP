@@ -24,10 +24,8 @@ fields:
     required:
       type: AtLeaseOne
       relavant: phone
+# <!-- !WARNING! DO NOT CHANGE ANYTHING UNLESS YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO  -->
 ---
-
-<!-- !WARNING! DO NOT CHANGE ANYTHING UNLESS YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO  -->
-
 # COSCUP 2020 COVID-19 健康聲明
 
 :::spotlight-danger
