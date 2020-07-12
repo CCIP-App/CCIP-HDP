@@ -36,7 +36,7 @@ export type Field = {
 export type RequiredStatement =
   | boolean
   | {
-      type: RequiredStatementAdvanceType;
+      type: RequiredStatementAdvanceType | string;
       relavant: string;
     };
 

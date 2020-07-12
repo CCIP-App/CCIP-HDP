@@ -42,6 +42,13 @@ const actions: ActionTree<FormState, CoreState> = {
     commit(cmd.FORM__SET_FIELD, field);
   },
 
+  setData(
+    { commit },
+    data: FormState["data"]
+  ): void {
+    commit(cmd.FORM__SET_DATA, data);
+  },
+
   async verifyToken(
     { commit },
     args: { endpoint: AppState["endpoint"], token: FormState["token"] }
@@ -87,6 +94,13 @@ const mutations: MutationTree<FormState> = {
     field: FormState["field"]
   ) {
     state.field = field;
+  },
+
+  [cmd.FORM__SET_DATA](
+    state: FormState,
+    data: FormState["data"]
+  ) {
+    state.data = data;
   }
 };
 
