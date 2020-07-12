@@ -14,26 +14,26 @@ export const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "declaration" */ "@/views/Landing.vue")
   },
   {
-    path: "/declaration",
-    name: "Declaration",
-    meta: {
-      type: "Step",
-      index: 0,
-      label: { zh: "健康聲明", en: "Health Declaration" }
-    },
-    component: () =>
-      import(/* webpackChunkName: "declaration" */ "@/views/Declaration.vue")
-  },
-  {
     path: "/fill",
     name: "Fill",
     meta: {
       type: "Step",
-      index: 1,
+      index: 0,
       label: { zh: "填寫個人資料", en: "Fill Information" }
     },
     component: () =>
       import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
+  },
+  {
+    path: "/declaration",
+    name: "Declaration",
+    meta: {
+      type: "Step",
+      index: 1,
+      label: { zh: "健康聲明", en: "Health Declaration" }
+    },
+    component: () =>
+      import(/* webpackChunkName: "declaration" */ "@/views/Declaration.vue")
   },
   {
     path: "/status",
