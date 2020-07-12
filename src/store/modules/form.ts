@@ -70,7 +70,7 @@ const actions: ActionTree<FormState, CoreState> = {
     try {
       const formData = new FormData();
       Object.keys(args.data).forEach(key => {
-        formData.append(key, args.data[key]);
+        formData.append(key, (args.data[key] as string));
       })
   
       const res = await axios.post(`${args.endpoint}/fill`, formData);
