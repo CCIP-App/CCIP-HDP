@@ -27,6 +27,13 @@ const actions: ActionTree<FormState, CoreState> = {
     commit(cmd.FORM__SET_TOKEN, token);
   },
 
+  resetToken(
+    { commit },
+    token: FormState["token"]
+  ): void {
+    commit(cmd.FORM__SET_TOKEN, "");
+  },
+
   setFields(
     { commit },
     data: FormState["data"]
