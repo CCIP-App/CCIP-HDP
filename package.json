@@ -38,6 +38,7 @@
     "markdown-yaml-metadata-parser": "^2.1.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
+    "raw-loader": "^4.0.1",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-qrcode-reader": "^2.3.3",
