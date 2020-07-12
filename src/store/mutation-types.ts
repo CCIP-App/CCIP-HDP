@@ -1,0 +1,1 @@
+export const APP__REGISTER_INIT = 'APP__REGISTER_INIT';
