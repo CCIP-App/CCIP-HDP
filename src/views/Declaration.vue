@@ -51,6 +51,7 @@ export default class Declaration extends Vue {
         endpoint: this.endpoint,
         data: {
           token: this.token,
+          status: true,
           ...this.formData
         }
       });

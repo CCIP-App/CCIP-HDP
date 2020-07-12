@@ -1,6 +1,7 @@
 ---
 title: COSCUP 2020 COVID-19 健康聲明
 endpoint: https://hd.coscup.org/
+callback: https://dl.opass.app/?link=https%3A%2F%2Fopass.app%2Fopen%2F%3Fevent_id%3DCOSCUP_2020%26token%3D<<TOKEN>>&apn=app.opass.ccip&amv=38&isi=1436417025&ibi=app.opass.ccip
 fields:
   - label:
       en: Nickname

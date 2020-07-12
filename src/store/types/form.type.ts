@@ -9,8 +9,9 @@ export interface FormState {
 }
 
 export interface FormPayload {
-  token: string;
-  [key: string]: string;
+  token?: string;
+  status: boolean;
+  [key: string]: string | boolean | undefined;
 }
 
 export type FormResponse = {

@@ -1,19 +1,33 @@
 <template>
   <div
-    class="landing landing-container"
-    :class="{ passed: status === true, failed: status === false }"
+    class="landing landing-container staff"
+    :class="{
+      passed: status === true,
+      failed: status === false,
+      nofill: status === null
+    }"
   >
-    <h1>掃描 QR Code<br />以開始填寫健康聲明書</h1>
+    <h1>STAFF Client</h1>
     <Scanner />
     <div
-      v-if="status !== null"
-      :class="{ passed: status }"
+      :class="{
+        passed: status === true,
+        failed: status === false,
+        nofill: status === null
+      }"
       class="landing status-icon"
     >
-      <font-awesome-icon v-if="status" :icon="['fas', 'check']" />
-      <font-awesome-icon v-else :icon="['fas', 'times']" />
+      <font-awesome-icon v-if="status === true" :icon="['fas', 'check']" />
+      <font-awesome-icon
+        v-else-if="status === false"
+        :icon="['fas', 'times']"
+      />
+      <font-awesome-icon
+        v-else-if="status === null"
+        :icon="['fas', 'exclamation-triangle']"
+      />
     </div>
-    <h1>Scan QR Code<br />to start filling the Healty Declaration</h1>
+    <h1>STAFF Client</h1>
   </div>
 </template>
 
@@ -50,7 +64,7 @@ export default class Landing extends Vue {
   @Watch("token")
   private async onTokenChange(token: string) {
     if (token) {
-      this.status = null;
+      this.status = "";
 
       const res = (await this.verifyToken({
         endpoint: this.endpoint,
@@ -58,7 +72,8 @@ export default class Landing extends Vue {
       })) as { fill: string; status: string };
 
       if (!res.fill) {
-        this.$router.push({ name: "Fill" });
+        this.status = null;
+        this.resetScanner();
       } else if (res.status) {
         this.status = true;
         this.resetScanner();
@@ -69,13 +84,13 @@ export default class Landing extends Vue {
     }
   }
 
-  private status: boolean | null = null;
+  private status: boolean | null | string = "";
 
   private resetScanner(): void {
     setTimeout(() => {
-      this.status = null;
+      this.status = "";
       this.resetToken();
-    }, 2000);
+    }, 1000);
   }
 }
 </script>

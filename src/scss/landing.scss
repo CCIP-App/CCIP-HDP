@@ -7,9 +7,16 @@
     align-items: center;
     height: 100vh;
 
+    &.staff {
+      background-color: $black;
+      color: $white;
+    }
+
     &.passed,
-    &.failed {
-      animation: fadeOut 3s ease-in-out;
+    &.failed,
+    &.nofill {
+      animation: fadeOut 2s cubic-bezier(1, 0, 1, 0);
+      animation-fill-mode: backwards;
     }
 
     &.passed {
@@ -19,21 +26,43 @@
     &.failed {
       background-color: $red;
     }
+
+    &.nofill {
+      background-color: $yellow;
+    }
   }
 
   > .scanner-container {
     margin: 1rem;
+    position: relative;
+    z-index: 1;
   }
 
   > .status-icon {
     position: absolute;
     font-size: 128px;
-    color: $red;
-    animation: fadeOut 2s ease-in-out;
-    animation-fill-mode: forwards;
-
+    animation: fadeOut 2s cubic-bezier(1, 0, 1, 0);
+    animation-fill-mode: backwards;
+    z-index: 100;
+    
     &.passed {
       color: $green;
     }
+    
+    &.failed {
+      color: $red;
+    }
+
+    &.nofill {
+      color: $yellow;
+    }
+  }
+
+  h1 {
+    margin: 1rem;
+    width: 300px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
   }
 }
