@@ -2,28 +2,28 @@
 title: COSCUP 2020 COVID-19 健康聲明
 endpoint: https://hd.coscup.org/
 fields:
-- nickname:
-  - showAs:
-    en: Nickname
-    zh: 暱稱
-  required: true
-  type: text
-- phone:
-  - showAs:
-    en: Phone
-    zh: 電話
-  - required:
-    type: AtLeaseOne
-    relavant: email
-  type: phone
-- email:
-  - showAs:
-    en: Email
-    zh: 電子郵件
-  - required:
-    type: AtLeaseOne
-    relavant: phone
-  type: email
+  - label:
+      en: Nickname
+      zh: 暱稱
+    name: name
+    required: true
+    type: text
+  - label:
+      en: Phone
+      zh: 電話
+    name: phone
+    type: phone
+    required:
+      type: AtLeaseOne
+      relavant: email
+  - label:
+      en: Email
+      zh: 電子郵件
+    name: email
+    type: email
+    required:
+      type: AtLeaseOne
+      relavant: phone
 ---
 
 <!-- !WARNING! DO NOT CHANGE ANYTHING UNLESS YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO  -->
