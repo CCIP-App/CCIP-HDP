@@ -8,6 +8,6 @@ declare module "*.md" {
   export default content;
 }
 
-declare module "vue-qrcode-reader"
+declare module "vue-qrcode-reader";
 
 declare module "markdown-yaml-metadata-parser";

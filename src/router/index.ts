@@ -21,8 +21,7 @@ export const routes: Array<RouteConfig> = [
       index: 0,
       label: { zh: "填寫個人資料", en: "Fill Information" }
     },
-    component: () =>
-      import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
+    component: () => import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
   },
   {
     path: "/declaration",
