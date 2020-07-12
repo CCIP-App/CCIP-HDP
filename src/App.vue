@@ -36,7 +36,7 @@ export default class App extends Vue {
   private setContent!: (content: DeclarationState["content"]) => void;
 
   private created(): void {
-    const HDP = metadataParser(rawHDP).metadata;
+    const HDP = metadataParser(rawHDP);
 
     this.register({
       title: HDP.metadata.title,
