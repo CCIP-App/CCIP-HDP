@@ -19,6 +19,13 @@ const getters: GetterTree<FormState, CoreState> = {
 };
 
 const actions: ActionTree<FormState, CoreState> = {
+  setToken(
+    { commit },
+    token: FormState["token"]
+  ): void {
+    commit(cmd.FORM__SET_TOKEN, token);
+  },
+
   setFields(
     { commit },
     data: FormState["data"]
@@ -46,6 +53,13 @@ const actions: ActionTree<FormState, CoreState> = {
 };
 
 const mutations: MutationTree<FormState> = {
+  [cmd.FORM__SET_TOKEN](
+    state: FormState,
+    token: FormState["token"]
+  ) {
+    state.token = token;
+  },
+
   [cmd.FORM__SET_FIELD](
     state: FormState,
     data: FormState["data"]
