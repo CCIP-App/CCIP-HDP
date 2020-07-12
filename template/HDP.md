@@ -30,13 +30,13 @@ fields:
 
 # COSCUP 2020 COVID-19 健康聲明
 
-:::info danger
+:::spotlight-danger
 請注意，若欲順利進入 COSCUP 年會會場，以下旅遊史、追蹤措施、接觸史、是否群聚皆須為「否」，如有不實填報，須負民事、刑事及行政等相關法律責任；如您有任何項目為「是」，請您放棄填寫問卷，待狀況解除後再行填寫。
 
 Attention! In order to enter any COSCUP venue, you have to check "No" in the following questions of Travel history, Follow-up Measures, Contact history, and Cluster. If you do not respond honestly, you shall take all legal liabilities therefrom. Please give up filling this questionnaire if you can not honestly check "No" in the aforementioned items.
 :::
 
-:::info part
+:::spotlight-part
 
 ## 旅遊史｜Travel history
 
@@ -47,7 +47,7 @@ Do you escape from 14 days of home quarantine if entering Taiwan from any foreig
 - [ ] 否｜No
 
 :::
-:::info part
+:::spotlight-part
 
 ## 追蹤措施｜Follow-up Measures
 
@@ -58,7 +58,7 @@ Are you currently undergoing 14 days of home isolation, home quarantine, or self
 - [ ] 否｜No
 
 :::
-:::info part
+:::spotlight-part
 
 ## 接觸史｜Contact history
 
@@ -69,7 +69,7 @@ Have you had contact with people who entered Taiwan from foreign countries in th
 - [ ] 否｜No
 
 :::
-:::info part
+:::spotlight-part
 
 ## 是否群聚｜Cluster
 
@@ -80,7 +80,7 @@ Are there more than 2 people (including 2 people) around you having the followin
 - [ ] 否｜No
 
 :::
-:::warning part
+:::spotlight-warning
 
 本人已閱讀過以上說明，且願意提供個人資料，同時聲明以上所有資訊（包含個人資料）均正確無誤，如有不實，本人了解須負民事、刑事及行政等相關法律責任，若因不實填寫導致疫情擴散或大會損失將負權責。
 
