@@ -11,12 +11,13 @@ const namespaced = true;
 
 export const state: FormState = {
   token: "",
+  field: [],
   data: {}
 };
 
 const getters: GetterTree<FormState, CoreState> = {
   token: (state): FormState["token"] => state.token,
-  data: (state): FormState["data"] => state.data
+  field: (state): FormState["field"] => state.field
 };
 
 const actions: ActionTree<FormState, CoreState> = {
@@ -36,9 +37,9 @@ const actions: ActionTree<FormState, CoreState> = {
 
   setFields(
     { commit },
-    data: FormState["data"]
+    field: FormState["field"]
   ): void {
-    commit(cmd.FORM__SET_FIELD, data);
+    commit(cmd.FORM__SET_FIELD, field);
   },
 
   async verifyToken(
@@ -83,9 +84,9 @@ const mutations: MutationTree<FormState> = {
 
   [cmd.FORM__SET_FIELD](
     state: FormState,
-    data: FormState["data"]
+    field: FormState["field"]
   ) {
-    state.data = data;
+    state.field = field;
   }
 };
 

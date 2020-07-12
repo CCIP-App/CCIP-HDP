@@ -2,8 +2,9 @@ import { I18n } from "@/store/types/i18n.type";
 
 export interface FormState {
   token: string;
+  field: Field[];
   data: {
-    [key: string]: Field;
+    [key: string]: string;
   }
 }
 
@@ -26,8 +27,10 @@ export type FormResponse = {
 } | any;
 
 export type Field = {
-  showAs: I18n;
+  label: I18n;
+  name: string;
   required: RequiredStatement;
+  type: string;
 };
 
 export type RequiredStatement =
