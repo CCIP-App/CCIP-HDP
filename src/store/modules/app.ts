@@ -18,7 +18,7 @@ const getters: GetterTree<AppState, CoreState> = {
 }
 
 const actions: ActionTree<AppState, CoreState> = {
-  appRegister ({ commit }, { title, endpoint }: { title: AppState["title"], endpoint: AppState["endpoint"] }): void {
+  register ({ commit }, { title, endpoint }: { title: AppState["title"], endpoint: AppState["endpoint"] }): void {
     commit(cmd.APP__REGISTER_INIT, { title, endpoint });
   }
 }
