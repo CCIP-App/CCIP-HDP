@@ -16,6 +16,7 @@ import MarkdownItContainer from "markdown-it-container";
 
 import { AppState } from "@/store/types/app.type";
 import { DeclarationState } from "@/store/types/declaration.type";
+import { FormState } from "@/store/types/form.type";
 
 import rawHDP from "@/../template/HDP.md";
 import Navbar from "@/components/Navbar.vue";
@@ -38,6 +39,9 @@ export default class App extends Vue {
   @Action("set", { namespace: "declaration" })
   private setContent!: (content: DeclarationState["content"]) => void;
 
+  @Action("setFields", { namespace: "form" })
+  private setFields!: (data: FormState["data"]) => void;
+
   private created(): void {
     const HDP = metadataParser(rawHDP);
     const mdParser = new MarkdownIt();
@@ -50,6 +54,7 @@ export default class App extends Vue {
       title: HDP.metadata.title,
       endpoint: HDP.metadata.endpoint
     });
+    this.setFields(HDP.metadata.fields);
     this.setContent(
       mdParser.render(HDP.content).replace(/spotlight/gm, "spotlight spotlight")
     );
