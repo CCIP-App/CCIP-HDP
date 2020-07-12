@@ -17,6 +17,12 @@ export type FormResponse = {
   status: boolean;
 } | {
   message: string;
+} | {
+  fill: string;
+  id: string;
+} | {
+  fill: string;
+  token: string;
 }
 
 export type Field = {

@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { CoreState } from "@/store/types/core.type";
 import { FormState, FormPayload, FormResponse } from "@/store/types/form.type";
+import { AppState } from "@/store/types/app.type";
 
 import * as cmd from "@/store/mutation-types";
 
@@ -33,9 +34,22 @@ const actions: ActionTree<FormState, CoreState> = {
     commit(cmd.FORM__SET_FIELD, data);
   },
 
+  async verifyToken(
+    { commit },
+    args: { endpoint: AppState["endpoint"], token: FormState["token"] }
+  ): Promise<FormResponse> {
+    try {
+      const res = await axios.get(`${args.endpoint}/token?=${args.token}`);
+      return (res.data as FormResponse);
+    } catch (error) {
+      console.error(error)
+      return error;
+    }
+  },
+
   async sendForm(
     { commit },
-    args: { endpoint: string, data: FormPayload }
+    args: { endpoint: AppState["endpoint"], data: FormPayload }
   ): Promise<FormResponse> {
     try {
       const formData = new FormData();
