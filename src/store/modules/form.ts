@@ -17,6 +17,7 @@ export const state: FormState = {
 
 const getters: GetterTree<FormState, CoreState> = {
   token: (state): FormState["token"] => state.token,
+  data: (state): FormState["data"] => state.data,
   field: (state): FormState["field"] => state.field
 };
 
@@ -76,7 +77,7 @@ const actions: ActionTree<FormState, CoreState> = {
       return (res.data as FormResponse);
     } catch (error) {
       console.error(error)
-      return error;
+      throw new Error(error.message);
     }
   }
 };
