@@ -13,6 +13,7 @@ import metadataParser from "markdown-yaml-metadata-parser";
 
 import MarkdownIt from "markdown-it";
 import MarkdownItContainer from "markdown-it-container";
+import MarkdownItTodo from "markdown-it-todo";
 
 import { AppState } from "@/store/types/app.type";
 import { DeclarationState } from "@/store/types/declaration.type";
@@ -48,7 +49,8 @@ export default class App extends Vue {
     mdParser
       .use(MarkdownItContainer, "spotlight-part")
       .use(MarkdownItContainer, "spotlight-danger")
-      .use(MarkdownItContainer, "spotlight-warning");
+      .use(MarkdownItContainer, "spotlight-warning")
+      .use(MarkdownItTodo);
 
     this.register({
       title: HDP.metadata.title,
@@ -56,7 +58,10 @@ export default class App extends Vue {
     });
     this.setFields(HDP.metadata.fields);
     this.setContent(
-      mdParser.render(HDP.content).replace(/spotlight/gm, "spotlight spotlight")
+      mdParser
+        .render(HDP.content)
+        .replace(/spotlight/gm, "spotlight spotlight")
+        .replace(/disabled="true"/gm, "")
     );
   }
 }

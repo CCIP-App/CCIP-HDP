@@ -11,3 +11,5 @@ declare module "*.md" {
 declare module "vue-qrcode-reader";
 
 declare module "markdown-yaml-metadata-parser";
+
+declare module "markdown-it-todo";
