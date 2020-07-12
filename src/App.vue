@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <router-view />
+    <Navbar v-if="$route.meta.type === 'Step'" />
+    <router-view class="view-port" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component
+import Navbar from "@/components/Navbar.vue";
+
+@Component({
+  components: {
+    Navbar
+  }
+})
 export default class App extends Vue {}
 </script>
 
