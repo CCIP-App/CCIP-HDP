@@ -2,9 +2,9 @@
   <div class="landing-container">
     <Scanner />
     <div
-      v-if="typeof status !== null"
+      v-if="status !== null"
       :class="{ passed: status }"
-      class="status-icon"
+      class="landing status-icon"
     >
       <font-awesome-icon v-if="status" :icon="['fas', 'check']" />
       <font-awesome-icon v-else :icon="['fas', 'times']" />
