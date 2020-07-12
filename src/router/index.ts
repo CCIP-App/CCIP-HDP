@@ -14,6 +14,15 @@ export const routes: Array<RouteConfig> = [
       import(/* webpackChunkName: "declaration" */ "@/views/Landing.vue")
   },
   {
+    path: "/staff",
+    name: "Staff",
+    meta: {
+      type: "Staff"
+    },
+    component: () =>
+      import(/* webpackChunkName: "declaration" */ "@/views/Staff.vue")
+  },
+  {
     path: "/fill",
     name: "Fill",
     meta: {
@@ -48,7 +57,7 @@ export const routes: Array<RouteConfig> = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   base: process.env.BASE_URL,
   routes
 });
