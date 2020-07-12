@@ -30,6 +30,10 @@ span {
   &-italic {
     font-style: italic;
   }
+
+  &-code {
+    font-family: 'Fira Code', monospace;
+  }
 }
 
 ruby {
@@ -39,8 +43,4 @@ ruby {
     letter-spacing: 0;
     font-weight: 300;
   }
-}
-
-.code {
-  font-family: 'Fira Code', monospace;
 }
