@@ -23,7 +23,7 @@ export type FormResponse = {
 } | {
   fill: string;
   token: string;
-}
+} | any;
 
 export type Field = {
   showAs: I18n;
