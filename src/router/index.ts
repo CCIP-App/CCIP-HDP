@@ -3,27 +3,45 @@ import VueRouter, { RouteConfig } from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+export const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Landing",
-    redirect: "/declaration"
-  },
-  {
-    path: "/declaration",
-    name: "Declaration",
+    meta: {
+      type: "Landing"
+    },
     component: () =>
-      import(/* webpackChunkName: "declaration" */ "@/views/Declaration.vue")
+      import(/* webpackChunkName: "declaration" */ "@/views/Landing.vue")
   },
   {
     path: "/fill",
     name: "Fill",
+    meta: {
+      type: "Step",
+      index: 0,
+      label: { zh: "填寫個人資料", en: "Fill Information" }
+    },
+    component: () => import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
+  },
+  {
+    path: "/declaration",
+    name: "Declaration",
+    meta: {
+      type: "Step",
+      index: 1,
+      label: { zh: "健康聲明", en: "Health Declaration" }
+    },
     component: () =>
-      import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
+      import(/* webpackChunkName: "declaration" */ "@/views/Declaration.vue")
   },
   {
     path: "/status",
     name: "Status",
+    meta: {
+      type: "Step",
+      index: 2,
+      label: { zh: "完成", en: "Finish" }
+    },
     component: () =>
       import(/* webpackChunkName: "status" */ "@/views/Status.vue")
   }

@@ -1,0 +1,9 @@
+export const APP__REGISTER_INIT = "APP__REGISTER_INIT";
+
+export const DECLARATION__SET_CONTENT = "DECLARATION__SET_CONTENT";
+
+export const FORM__SET_TOKEN = "FORM__SET_TOKEN";
+
+export const FORM__SET_FIELD = "FORM__SET_FIELD";
+
+export const FORM__SET_DATA = "FORM__SET_DATA";
