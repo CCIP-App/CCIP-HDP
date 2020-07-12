@@ -1,0 +1,69 @@
+.fill {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  display: flex;
+  flex-direction: column-reverse;
+
+  &-label {
+    font-size: 16px;
+    color: $dark-1;
+    display: flex;
+    flex-direction: row;
+
+    > span:last-child {
+      font-size: 12px;
+      margin-left: auto;
+      margin-top: auto;
+    }
+  }
+
+  &-inputbox {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0 0 2rem 0;
+    color: $black;
+    font-size: 24px;
+    padding: 12px 0;
+    border-bottom: 2px solid $dark-1;
+    box-sizing: border-box;
+
+    &:focus {
+      border-bottom-color: $purple;
+
+      & + label {
+        color: $purple;
+      }
+    }
+
+    &:invalid {
+      box-shadow: none;
+      border-bottom-color: $red;
+
+      & + label {
+        color: $red;
+      }
+    }
+  }
+
+  .button {
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: $dark-1;
+    cursor: pointer;
+
+    > span {
+      margin-right: 1rem;
+    }
+  }
+}
