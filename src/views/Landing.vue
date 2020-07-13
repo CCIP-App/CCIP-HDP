@@ -7,7 +7,7 @@
     <Scanner />
     <div
       v-if="status !== null"
-      :class="{ passed: status }"
+      :class="{ passed: status === true, failed: status === false }"
       class="landing status-icon"
     >
       <font-awesome-icon v-if="status" :icon="['fas', 'check']" />

@@ -1,0 +1,21 @@
+.status {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-msg {
+    margin: 0 2rem;
+    width: calc(300px - 4rem);
+    line-height: 1.2;
+    color: $dark-1;
+    text-align: center;
+    font-size: 14px;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+}
