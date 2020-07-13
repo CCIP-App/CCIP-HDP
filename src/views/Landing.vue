@@ -14,6 +14,9 @@
       <font-awesome-icon v-else :icon="['fas', 'times']" />
     </div>
     <h1>Scan QR Code<br />to start filling the Healty Declaration</h1>
+    <p @click="$router.push({ name: 'Fill' })">
+      我沒有 QRCode｜I don't have QRCode
+    </p>
   </div>
 </template>
 
