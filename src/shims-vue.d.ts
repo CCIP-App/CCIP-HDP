@@ -14,4 +14,4 @@ declare module "markdown-yaml-metadata-parser";
 
 declare module "markdown-it-todo";
 
-declare module 'punycode';
+declare module "punycode";
