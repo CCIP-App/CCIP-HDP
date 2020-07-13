@@ -15,7 +15,7 @@
     </div>
     <h1>Scan QR Code<br />to start filling the Healty Declaration</h1>
     <p @click="$router.push({ name: 'Fill' })">
-      我沒有 QRCode｜I don't have QRCode
+      我沒有 QR Code<br />I don't have QR Code
     </p>
   </div>
 </template>
