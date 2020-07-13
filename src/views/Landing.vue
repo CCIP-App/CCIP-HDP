@@ -32,6 +32,9 @@ import Scanner from "@/components/Scanner.vue";
   }
 })
 export default class Landing extends Vue {
+  @Action("setToken", { namespace: "form" })
+  private setToken!: (token: FormState["token"]) => void;
+
   @Action("verifyToken", { namespace: "form" })
   private verifyToken!: (args: {
     endpoint: AppState["endpoint"];
@@ -69,6 +72,10 @@ export default class Landing extends Vue {
     }
   }
 
+  private mounted() {
+    this.detectRouterToken();
+  }
+
   private status: boolean | null = null;
 
   private resetScanner(): void {
@@ -76,6 +83,12 @@ export default class Landing extends Vue {
       this.status = null;
       this.resetToken();
     }, 2000);
+  }
+
+  private detectRouterToken(): void {
+    if (this.$route.query && this.$route.query.rtoken) {
+      this.setToken(this.$route.query.rtoken as string);
+    }
   }
 }
 </script>
