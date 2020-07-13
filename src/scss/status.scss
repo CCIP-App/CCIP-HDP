@@ -18,4 +18,43 @@
       margin-top: 2rem;
     }
   }
+
+  .button {
+    display: grid;
+    grid-template-areas: "img zh" "img en";
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 7px;
+    margin: 1.5rem 0;
+    color: $dark-1;
+    background-color: $white;
+    box-shadow:  3px 3px 9px darken($white, 10%), -3px -3px 9px $white;
+    border-radius: 32px;
+    cursor: pointer;
+    width: 300px;
+
+    img {
+      grid-area: img;
+      height: 64px;
+    }
+
+    p {
+      &:first-child {
+        grid-area: zh;
+        justify-content: flex-end;
+      }
+
+      &:last-child {
+        grid-area: en;
+        justify-content: flex-start;
+        font-size: 12px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: 14px;
+      padding-left: 1rem;
+    }
+  }
 }
