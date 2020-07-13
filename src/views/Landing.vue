@@ -66,8 +66,7 @@ export default class Landing extends Vue {
       if (!res.fill) {
         this.$router.push({ name: "Fill" });
       } else if (res.status) {
-        this.status = true;
-        this.resetScanner();
+        this.$router.push({ name: "Status" });
       } else {
         this.status = false;
         this.resetScanner();
