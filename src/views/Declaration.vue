@@ -47,14 +47,24 @@ export default class Declaration extends Vue {
         }
       });
 
-      await this.sendForm({
-        endpoint: this.endpoint,
-        data: {
-          token: this.token,
-          status: true,
-          ...this.formData
-        }
-      });
+      if (this.token) {
+        await this.sendForm({
+          endpoint: this.endpoint,
+          data: {
+            token: this.token,
+            status: true,
+            ...this.formData
+          }
+        });
+      } else {
+        await this.sendForm({
+          endpoint: this.endpoint,
+          data: {
+            status: true,
+            ...this.formData
+          }
+        });
+      }
 
       this.$router.push({ name: "Status" });
     } catch (error) {

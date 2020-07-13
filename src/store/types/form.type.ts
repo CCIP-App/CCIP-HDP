@@ -5,7 +5,7 @@ export interface FormState {
   field: Field[];
   data: {
     [key: string]: string;
-  }
+  };
 }
 
 export interface FormPayload {
@@ -14,18 +14,24 @@ export interface FormPayload {
   [key: string]: string | boolean | undefined;
 }
 
-export type FormResponse = {
-  fill: boolean;
-  status: boolean;
-} | {
-  message: string;
-} | {
-  fill: string;
-  id: string;
-} | {
-  fill: string;
-  token: string;
-} | any;
+export type FormResponse =
+  | {
+      fill: boolean;
+      status: boolean;
+    }
+  | {
+      message: string;
+    }
+  | {
+      fill: string;
+      id: string;
+    }
+  | {
+      fill: string;
+      token: string;
+    }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  | any;
 
 export type Field = {
   label: I18n;
