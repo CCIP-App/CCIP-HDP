@@ -15,7 +15,8 @@ export const state: AppState = {
 
 const getters: GetterTree<AppState, CoreState> = {
   title: (state): AppState["title"] => state.title,
-  endpoint: (state): AppState["endpoint"] => state.endpoint
+  endpoint: (state): AppState["endpoint"] => state.endpoint,
+  callback: (state): AppState["callback"] => state.callback
 };
 
 const actions: ActionTree<AppState, CoreState> = {
