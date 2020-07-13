@@ -7,6 +7,10 @@ import store from "./store";
 
 import "./registerServiceWorker";
 
+import VueQrcode from '@chenfengyuan/vue-qrcode';
+
+Vue.component(VueQrcode.name, VueQrcode);
+
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";

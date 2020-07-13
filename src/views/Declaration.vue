@@ -17,6 +17,9 @@ import { FormState, FormPayload, FormResponse } from "@/store/types/form.type";
 
 @Component
 export default class Declaration extends Vue {
+  @Action("setToken", { namespace: "form" })
+  private setToken!: (token: FormState["token"]) => void;
+
   @Action("sendForm", { namespace: "form" })
   private sendForm!: (args: {
     endpoint: AppState["endpoint"];
@@ -56,14 +59,18 @@ export default class Declaration extends Vue {
             ...this.formData
           }
         });
+
+        this.setToken(this.token);
       } else {
-        await this.sendForm({
+        const res = await this.sendForm({
           endpoint: this.endpoint,
           data: {
             status: true,
             ...this.formData
           }
         });
+
+        this.setToken(res.id);
       }
 
       this.$router.push({ name: "Status" });
