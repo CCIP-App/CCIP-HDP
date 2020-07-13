@@ -16,6 +16,11 @@
       <br /><br />
       Please keep your QR Code properly for entrance venue
     </p>
+    <div v-if="callback" class="button" @click="openOPass">
+      <img src="https://opass.app/img/logo.png" alt="" />
+      <p>直接匯出 OPass 票卷</p>
+      <p>Export OPass ticket directly</p>
+    </div>
   </div>
 </template>
 
@@ -25,7 +30,15 @@ import { Getter } from "vuex-class";
 
 @Component
 export default class Status extends Vue {
+  @Getter("callback", { namespace: "app" })
+  private callback!: string;
+
   @Getter("token", { namespace: "form" })
   private token!: string;
+
+  private openOPass(): void {
+    const url = this.callback.replace(/<<TOKEN>>/gm, this.token);
+    window.open(url, "_blank");
+  }
 }
 </script>

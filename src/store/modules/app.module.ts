@@ -9,12 +9,14 @@ const namespaced = true;
 
 export const state: AppState = {
   title: "",
-  endpoint: ""
+  endpoint: "",
+  callback: ""
 };
 
 const getters: GetterTree<AppState, CoreState> = {
   title: (state): AppState["title"] => state.title,
-  endpoint: (state): AppState["endpoint"] => state.endpoint
+  endpoint: (state): AppState["endpoint"] => state.endpoint,
+  callback: (state): AppState["callback"] => state.callback
 };
 
 const actions: ActionTree<AppState, CoreState> = {
@@ -22,10 +24,11 @@ const actions: ActionTree<AppState, CoreState> = {
     { commit },
     {
       title,
-      endpoint
-    }: { title: AppState["title"]; endpoint: AppState["endpoint"] }
+      endpoint,
+      callback
+    }: { title: AppState["title"]; endpoint: AppState["endpoint"]; callback?: AppState["callback"]; }
   ): void {
-    commit(cmd.APP__REGISTER_INIT, { title, endpoint });
+    commit(cmd.APP__REGISTER_INIT, { title, endpoint, callback });
   }
 };
 
@@ -34,11 +37,13 @@ const mutations: MutationTree<AppState> = {
     state: AppState,
     {
       title,
-      endpoint
-    }: { title: AppState["title"]; endpoint: AppState["endpoint"] }
+      endpoint,
+      callback
+    }: { title: AppState["title"]; endpoint: AppState["endpoint"]; callback?: AppState["callback"]; }
   ) {
     state.title = title;
     state.endpoint = endpoint;
+    state.callback = callback;
   }
 };
 
