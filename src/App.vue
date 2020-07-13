@@ -66,6 +66,8 @@ export default class App extends Vue {
         .replace(/spotlight/gm, "spotlight spotlight")
         .replace(/disabled="true"/gm, "")
     );
+
+    document.title = HDP.metadata.title;
   }
 }
 </script>
