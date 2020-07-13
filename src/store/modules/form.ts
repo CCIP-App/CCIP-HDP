@@ -47,8 +47,13 @@ const actions: ActionTree<FormState, CoreState> = {
       const res = await axios.get(`${args.endpoint}status?token=${args.token}`);
       return res.data as FormResponse;
     } catch (error) {
-      console.error(error);
-      return error;
+      try {
+        const res = await axios.get(`${args.endpoint}status?id=${args.token}`);
+        return res.data as FormResponse;
+      } catch (error) {
+        console.error(error);
+        return error;
+      }
     }
   },
 
