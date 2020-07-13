@@ -31,10 +31,12 @@ export default class App extends Vue {
   @Action("register", { namespace: "app" })
   private register!: ({
     title,
-    endpoint
+    endpoint,
+    callback
   }: {
     title: AppState["title"];
     endpoint: AppState["endpoint"];
+    callback?: AppState["callback"];
   }) => void;
 
   @Action("set", { namespace: "declaration" })
@@ -54,7 +56,8 @@ export default class App extends Vue {
 
     this.register({
       title: HDP.metadata.title,
-      endpoint: HDP.metadata.endpoint
+      endpoint: HDP.metadata.endpoint,
+      callback: HDP.metadata.callback
     });
     this.setFields(HDP.metadata.fields);
     this.setContent(
