@@ -13,7 +13,7 @@
       <font-awesome-icon v-if="status" :icon="['fas', 'check']" />
       <font-awesome-icon v-else :icon="['fas', 'times']" />
     </div>
-    <h1>Scan QR Code<br />to start filling the Healty Declaration</h1>
+    <h1>Scan QR Code<br />to start filling the Health Declaration</h1>
     <p @click="$router.push({ name: 'Fill' })">
       我沒有 QR Code<br />I don't have QR Code
     </p>
