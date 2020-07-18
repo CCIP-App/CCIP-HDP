@@ -7,7 +7,7 @@
     </p>
     <qrcode
       :value="token"
-      :options="{ width: 300, color: { dark: '#9E47FA' } }"
+      :options="{ width: 300, color: { dark: '#3C2354' } }"
       tag="img"
       class="status status-qrcode"
     />
