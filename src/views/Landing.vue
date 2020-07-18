@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!$route.query.rtoken"
     class="landing landing-container"
     :class="{ passed: status === true, failed: status === false }"
   >
