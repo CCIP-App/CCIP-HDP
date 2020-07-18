@@ -72,7 +72,12 @@ export default class Fill extends Vue {
         }
       });
 
-      const result = window.confirm("再次確定聯絡資訊無誤。\nMake sure again that contact information is correct.\n\n" + Object.keys(this.fieldData).map((key) => (`${key}: ${this.fieldData[key]}`)).join("\n"));
+      const result = window.confirm(
+        "再次確定聯絡資訊無誤。\nMake sure again that contact information is correct.\n\n" +
+          Object.keys(this.fieldData)
+            .map(key => `${key}: ${this.fieldData[key]}`)
+            .join("\n")
+      );
 
       if (result) {
         this.setData(this.fieldData);

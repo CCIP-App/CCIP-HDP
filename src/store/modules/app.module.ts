@@ -28,15 +28,16 @@ const actions: ActionTree<AppState, CoreState> = {
       title,
       endpoint,
       callback
-    }: { title: AppState["title"]; endpoint: AppState["endpoint"]; callback?: AppState["callback"]; }
+    }: {
+      title: AppState["title"];
+      endpoint: AppState["endpoint"];
+      callback?: AppState["callback"];
+    }
   ): void {
     commit(cmd.APP__REGISTER_INIT, { title, endpoint, callback });
   },
 
-  toggleAppMode(
-    { commit },
-    status: AppState["appMode"]
-  ): void {
+  toggleAppMode({ commit }, status: AppState["appMode"]): void {
     commit(cmd.APP__APP_MODE_TOGGLE, status);
   }
 };
@@ -48,17 +49,18 @@ const mutations: MutationTree<AppState> = {
       title,
       endpoint,
       callback
-    }: { title: AppState["title"]; endpoint: AppState["endpoint"]; callback?: AppState["callback"]; }
+    }: {
+      title: AppState["title"];
+      endpoint: AppState["endpoint"];
+      callback?: AppState["callback"];
+    }
   ) {
     state.title = title;
     state.endpoint = endpoint;
     state.callback = callback;
   },
 
-  [cmd.APP__APP_MODE_TOGGLE](
-    state: AppState,
-    status: AppState["appMode"]
-  ) {
+  [cmd.APP__APP_MODE_TOGGLE](state: AppState, status: AppState["appMode"]) {
     state.appMode = status;
   }
 };
