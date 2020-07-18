@@ -75,7 +75,7 @@ export default class Declaration extends Vue {
 
       this.$router.push({ name: "Status" });
     } catch (error) {
-      alert(error.message);
+      window.alert(error.message);
     }
   }
 }

@@ -72,10 +72,14 @@ export default class Fill extends Vue {
         }
       });
 
-      this.setData(this.fieldData);
-      this.$router.push({ name: "Declaration" });
+      const result = window.confirm("再次確定我的聯絡資訊無誤。\nMake sure again that my contact information is correct.\n\n" + Object.keys(this.fieldData).map((key) => (`${key}: ${this.fieldData[key]}`)).join("\n"));
+
+      if (result) {
+        this.setData(this.fieldData);
+        this.$router.push({ name: "Declaration" });
+      }
     } catch (error) {
-      alert(error.message);
+      window.alert(error.message);
     }
   }
 }
