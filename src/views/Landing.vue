@@ -48,6 +48,9 @@ export default class Landing extends Vue {
   @Action("resetToken", { namespace: "form" })
   private resetToken!: () => void;
 
+  @Action("toggleAppMode", { namespace: "app" })
+  private toggleAppMode!: (status: boolean) => void;
+
   @Getter("endpoint", { namespace: "app" })
   private endpoint!: string;
 
@@ -90,6 +93,7 @@ export default class Landing extends Vue {
 
   private detectRouterToken(): void {
     if (this.$route.query && this.$route.query.rtoken) {
+      this.toggleAppMode(true);
       this.setToken(this.$route.query.rtoken as string);
     }
   }

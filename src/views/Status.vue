@@ -16,7 +16,7 @@
       <br /><br />
       Please keep your QR Code properly for entrance venue
     </p>
-    <div v-if="callback" class="button" @click="openOPass">
+    <div v-if="callback && !appMode" class="button" @click="openOPass">
       <img src="https://opass.app/img/logo.png" alt="" />
       <p>直接匯出 OPass 票卷</p>
       <p>Export OPass ticket directly</p>
@@ -30,6 +30,9 @@ import { Getter } from "vuex-class";
 
 @Component
 export default class Status extends Vue {
+  @Getter("appMode", { namespace: "app" })
+  private appMode!: string;
+
   @Getter("callback", { namespace: "app" })
   private callback!: string;
 
