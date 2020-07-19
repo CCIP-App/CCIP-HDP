@@ -59,7 +59,7 @@ Are you currently undergoing 14-day home isolation, home quarantine, or self-hea
 :::
 :::spotlight-part
 
-## 接觸史｜Contact history
+## 接觸史｜Contact History
 
 請問您過去 14 天內是否有接觸從國外回台之人士？
 
@@ -70,7 +70,7 @@ Have you been in close contact with people who entered Taiwan from foreign count
 :::
 :::spotlight-part
 
-## 是否群聚｜Cluster
+## 是否群聚｜Cluster History
 
 請問您過去 14 天內身邊是否有其他 2 人（含）以上出現下列疑似感染症狀？發燒症狀(額溫≧37.5°C)、咳嗽、流鼻水、鼻塞、喉嚨痛、頭痛、呼吸急促、肌肉痠痛、疲倦、味覺或嗅覺喪失、腹瀉。
 
