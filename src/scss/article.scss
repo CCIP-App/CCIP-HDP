@@ -84,7 +84,6 @@
       content: "";
       height: 24px;
       width: 36px;
-      margin-right: 8px;
     }
 
     > input[type="checkbox"].markdown-todo {
@@ -94,10 +93,19 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      height: 48px;
+      margin: 0;
+      height: 24px;
       width: 200%;
-      transform: translateX(calc(-50% + 12px));
+      transform: translateX(calc(-50% + 12px + 4px));
       z-index: 100;
+
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+          transform: none;
+          height: 24px;
+          width: 100%;
+        }
+      }
     }
   }
 }
