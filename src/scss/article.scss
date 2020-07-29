@@ -32,10 +32,11 @@
 
     .spotlight {
       padding: 1rem 0;
-      
+      overflow: hidden;
+
       &-danger,
       &-warning {
-        background-color: rgba($red, .2);
+        background-color: rgba($red, 0.2);
         border: 2px solid $red;
         border-radius: 10px;
         box-sizing: border-box;
@@ -53,7 +54,7 @@
 
       &-warning {
         margin-top: 2rem;
-        background-color: rgba($yellow, .2);
+        background-color: rgba($yellow, 0.2);
         border: 2px solid $yellow;
       }
     }
@@ -70,6 +71,33 @@
 
     > span {
       margin-right: 1rem;
+    }
+  }
+
+  .task-list-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:before {
+      content: "";
+      height: 24px;
+      width: 36px;
+      margin-right: 8px;
+    }
+
+    > input[type="checkbox"].markdown-todo {
+      cursor: pointer;
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      height: 48px;
+      width: 200%;
+      transform: translateX(calc(-50% + 12px));
+      z-index: 100;
     }
   }
 }
