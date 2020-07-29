@@ -14,7 +14,7 @@
     <p class="status status-msg">
       請妥善保存您的 QR Code 以供入場查驗用
       <br /><br />
-      Please keep your QR Code properly for entrance venue
+      Please keep your QR Code properly for entry
     </p>
     <div v-if="callback && !appMode" class="button" @click="openOPass">
       <img src="https://opass.app/img/logo.png" alt="" />

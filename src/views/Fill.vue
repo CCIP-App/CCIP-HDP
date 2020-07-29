@@ -14,7 +14,7 @@
             typeof field.required === 'object' &&
               field.required.type === 'AtLeaseOne'
           "
-          >擇一填寫｜At lease one</span
+          >擇一填寫｜At least one</span
         >
         <span v-else-if="typeof field.required === 'boolean' && field.required"
           >必填｜Required</span
@@ -56,7 +56,7 @@ export default class Fill extends Vue {
         if (typeof field.required === "boolean" && field.required) {
           if (!this.fieldData[field.name]) {
             throw new Error(
-              "必填欄位不可為空！\nRequired field can't not be empty!"
+              "必填欄位不可為空！\nThe required field can't be empty！"
             );
           }
         } else if (
@@ -67,7 +67,7 @@ export default class Fill extends Vue {
             !this.fieldData[field.required.relavant] &&
             !this.fieldData[field.name]
           ) {
-            throw new Error("請擇一填寫！\nAt lease one fill should be fill!");
+            throw new Error("請擇一填寫！\nAt least one fill should be fill!");
           }
         }
       });

@@ -28,7 +28,7 @@ export const routes: Array<RouteConfig> = [
     meta: {
       type: "Step",
       index: 0,
-      label: { zh: "填寫個人資料", en: "Fill Information" }
+      label: { zh: "填寫個人資料", en: "Fill out" }
     },
     component: () => import(/* webpackChunkName: "fill" */ "@/views/Fill.vue")
   },
