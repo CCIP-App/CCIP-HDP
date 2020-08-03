@@ -11,14 +11,16 @@ export const state: AppState = {
   title: "",
   endpoint: "",
   callback: "",
-  appMode: false
+  appMode: false,
+  loading: false
 };
 
 const getters: GetterTree<AppState, CoreState> = {
   title: (state): AppState["title"] => state.title,
   endpoint: (state): AppState["endpoint"] => state.endpoint,
   callback: (state): AppState["callback"] => state.callback,
-  appMode: (state): AppState["appMode"] => state.appMode
+  appMode: (state): AppState["appMode"] => state.appMode,
+  loading: (state): AppState["loading"] => state.loading
 };
 
 const actions: ActionTree<AppState, CoreState> = {
@@ -39,6 +41,10 @@ const actions: ActionTree<AppState, CoreState> = {
 
   toggleAppMode({ commit }, status: AppState["appMode"]): void {
     commit(cmd.APP__APP_MODE_TOGGLE, status);
+  },
+
+  toggleLoading({ commit }, status: AppState["loading"]): void {
+    commit(cmd.APP__TOGGLE_LOADING, status);
   }
 };
 
@@ -62,6 +68,10 @@ const mutations: MutationTree<AppState> = {
 
   [cmd.APP__APP_MODE_TOGGLE](state: AppState, status: AppState["appMode"]) {
     state.appMode = status;
+  },
+
+  [cmd.APP__TOGGLE_LOADING](state: AppState, status: AppState["loading"]) {
+    state.loading = status;
   }
 };
 

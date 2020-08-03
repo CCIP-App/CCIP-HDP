@@ -3,4 +3,5 @@ export interface AppState {
   endpoint: string;
   callback?: string;
   appMode: boolean;
+  loading: boolean;
 }
