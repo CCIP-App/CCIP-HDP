@@ -26,6 +26,9 @@ export default class Declaration extends Vue {
     data: FormPayload;
   }) => Promise<FormResponse>;
 
+  @Action("toggleLoading", { namespace: "app" })
+  private toggleLoading!: (state: AppState["loading"]) => void;
+
   @Getter("endpoint", { namespace: "app" })
   private endpoint!: string;
 
@@ -38,6 +41,9 @@ export default class Declaration extends Vue {
   @Getter("data", { namespace: "form" })
   private formData!: FormState["data"];
 
+  @Getter("loading", { namespace: "app" })
+  private loading!: boolean;
+
   private async checkData(): Promise<void> {
     try {
       (document.querySelectorAll(".markdown-todo") as NodeListOf<
@@ -49,6 +55,8 @@ export default class Declaration extends Vue {
           );
         }
       });
+
+      this.toggleLoading(true);
 
       if (this.token) {
         await this.sendForm({
@@ -72,6 +80,8 @@ export default class Declaration extends Vue {
 
         this.setToken(res.id);
       }
+
+      this.toggleLoading(false);
 
       this.$router.push({ name: "Status" });
     } catch (error) {
