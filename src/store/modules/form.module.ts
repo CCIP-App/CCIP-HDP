@@ -68,7 +68,7 @@ const actions: ActionTree<FormState, CoreState> = {
         formData.append(key, args.data[key] as string);
       });
 
-      const res = await axios.post(`${args.endpoint}/fill`, formData);
+      const res = await axios.post(`${args.endpoint}fill`, formData);
       return res.data as FormResponse;
     } catch (error) {
       console.error(error);
