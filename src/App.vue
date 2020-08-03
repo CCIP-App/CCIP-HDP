@@ -2,6 +2,7 @@
   <div id="app">
     <Navbar v-if="$route.meta.type === 'Step'" />
     <router-view class="view-port" />
+    <Loading />
   </div>
 </template>
 
@@ -20,10 +21,13 @@ import { DeclarationState } from "@/store/types/declaration.type";
 import { FormState } from "@/store/types/form.type";
 
 import rawHDP from "@/../template/HDP.md";
+
 import Navbar from "@/components/Navbar.vue";
+import Loading from "@/components/Loading.vue";
 
 @Component({
   components: {
+    Loading,
     Navbar
   }
 })
