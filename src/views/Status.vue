@@ -12,15 +12,10 @@
       class="status status-qrcode"
     />
     <p class="status status-msg">
-      請妥善保存您的 QR Code 以供入場查驗用
+      請妥善保存您的 QR Code 以供健康聲明查驗用
       <br /><br />
-      Please keep your QR Code properly for entry
+      Please keep your QR Code properly for health declaration check
     </p>
-    <div v-if="callback && !appMode" class="button" @click="openOPass">
-      <img src="https://opass.app/img/logo.png" alt="" />
-      <p>直接匯出 OPass 票卷</p>
-      <p>Export OPass ticket directly</p>
-    </div>
   </div>
 </template>
 
