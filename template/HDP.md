@@ -1,89 +1,48 @@
 ---
-title: COSCUP 2020 COVID-19 健康聲明
+title: HITCON 2020 COVID-19 實聯制登錄
 endpoint: https://hd-hitcon.opass.app/
 callback:
 fields:
   - label:
-      en: Nickname
-      zh: 暱稱
-    name: name
-    required: true
-    type: text
-  - label:
-      en: Phone
+      en: Phone Number
       zh: 電話
     name: phone
     type: phone
-    required:
-      type: AtLeaseOne
-      relavant: email
+    required: true
   - label:
-      en: Email
-      zh: 電子郵件
-    name: email
-    type: email
-    required:
-      type: AtLeaseOne
-      relavant: phone
+      en: Appellation (optional)
+      zh: 稱呼（選填）
+    name: name
+    type: text
+    required: false
 # <!-- !WARNING! DO NOT CHANGE ANYTHING UNLESS YOU UNDERSTAND WHAT ARE YOU ACTUALLY DO  -->
 ---
-# COSCUP 2020 COVID-19 健康聲明
+# HITCON 2020 COVID-19 實聯制登錄
 
 :::spotlight-danger
-請注意，若欲順利進入 COSCUP 年會會場，以下旅遊史、追蹤措施、接觸史、是否群聚皆須為「否」，如有不實填報，須負民事、刑事及行政等相關法律責任；如您有任何項目為「是」，請您放棄填寫問卷，待狀況解除後再行填寫。
+若欲順利進入 HITCON 2020 會場，必須提供正確資料。若無法確實提供資料，或不同意個人資料使用說明，請停止登錄。
 
-All participants are required to answer the following questions about the travel history, the follow-up measures, the contact history, and the cluster history before entering the COSCUP venue. You shall bear all the legal liability if you do not respond honestly. The questionnaire will be terminated if you can not refute the questions.
-:::
-
-:::spotlight-part
-
-## 旅遊史｜Travel History
-
-請問您過去 14 天內，是否有從國外任何地區入境而未完成 14 天居家檢疫，或曾經前往有群聚/確診者活動而經公告之國內地點？
-
-Are you currently undergoing a 14-day home quarantine due to entry from any foreign country/region? Have you been to any announced domestic areas where the confirmed infected patient stopped by?
-
-- [ ] 否｜No
+All participants are required to provide accurate information before entering the venue of HITCON 2020. The registration will be terminated if you can not provide accurate information or do not agree to the personal information collection statement.
 
 :::
 :::spotlight-part
 
-## 追蹤措施｜Follow-up Measures
+## 個人資料使用說明｜Personal information collection statement
 
-請問您是否因任何原因，正在進行 14 天居家隔離、居家檢疫、或自主健康管理中？
-
-Are you currently undergoing 14-day home isolation, home quarantine, or self-health management?
-
-- [ ] 否｜No
-
-:::
-:::spotlight-part
-
-## 接觸史｜Contact History
-
-請問您過去 14 天內是否有接觸從國外回台之人士？
-
-Have you been in close contact with people who entered Taiwan from foreign countries/regions during the past 14 days?
-
-- [ ] 否｜No
-
-:::
-:::spotlight-part
-
-## 是否群聚｜Cluster History
-
-請問您過去 14 天內身邊是否有其他 2 人（含）以上出現下列疑似感染症狀？發燒症狀(額溫≧37.5°C)、咳嗽、流鼻水、鼻塞、喉嚨痛、頭痛、呼吸急促、肌肉痠痛、疲倦、味覺或嗅覺喪失、腹瀉。
-
-Are there 2 or more people around you having any of the following symptoms during the past 14 days: fever (forehead temperature higher than 37.5°C), cough, runny/stuffy nose, sore throat, headache, shortness of breath, muscle pain, malaise, loss of smell or taste, or diarrhea?
-
-- [ ] 否｜No
+1. 蒐集機關：台灣駭客協會與中央研究院人文社會科學館
+2. 蒐集之目的：防疫目的，依據「個人資料保護法之特定目的及個人資料之類別」為代號 012 公共衛生或傳染病防治之特定目的，且不得為目的外利用。
+3. 蒐集之個人資料項目：聯絡電話、稱呼（選填）。
+4. 個人資料利用之期間：自 2020 年 9 月 9 日起至 2020 年 10 月 7 日止。屆期即將個人資料予以刪除或銷毀。
+5. 個人資料利用之對象及方式：為防堵疫情而有必要時，得提供衛生主管機關依傳染病防治法等規定進行疫情調查及聯繫使用。
+6. 當事人就其個人資料，得依個人資料保護法規定，透過聯絡 service@hitcon.org ，向本機關行使權利，包含：查詢或請求閱覽、請求製給複製本、請求補充或更正、請求停止處理或利用、請求刪除。
+7. 當事人若不同意提供個人資料，不得進入 HITCON 2020 會場。
 
 :::
 :::spotlight-warning
 
-本人已閱讀過以上說明，且願意提供個人資料，同時聲明以上所有資訊（包含個人資料）均正確無誤，如有不實，本人了解須負民事、刑事及行政等相關法律責任，若因不實填寫導致疫情擴散或大會損失將負權責。
+本人已閱讀過以上說明，且願意提供個人資料，同時聲明以上所有資訊（包含個人資料）均正確無誤。
 
-I have read the information above and have consented to provide my personal information. I hereby confirm that all the above statements and personal information are accurate. I understand that I shall bear all the legal liability if there is any inaccurate statement or personal information. I also understand that I am responsible for the spread of the disease or the loss of the conference associated with such inaccurate statements or personal information.
+I have read the information above and have consented to provide my personal information. I hereby confirm that all the above statement(s) and personal information are accurate.
 
 - [ ] 同意｜Agree
 
