@@ -19,6 +19,7 @@
         <span v-else-if="typeof field.required === 'boolean' && field.required"
           >必填｜Required</span
         >
+        <span v-else></span>
       </label>
     </div>
     <div class="button" @click="checkData()">
