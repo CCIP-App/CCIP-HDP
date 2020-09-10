@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!$route.query.rtoken"
+    v-if="!$route.query.rtoken && $route.query.scanner"
     class="landing landing-container"
     :class="{ passed: status === true, failed: status === false }"
   >
@@ -92,6 +92,8 @@ export default class Landing extends Vue {
     if (this.$route.query && this.$route.query.rtoken) {
       this.toggleAppMode(true);
       this.setToken(this.$route.query.rtoken as string);
+    } else if (this.$route.query && !this.$route.query.scanner) {
+      this.$router.push({ name: "Fill" });
     }
   }
 }
