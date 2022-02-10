@@ -42,7 +42,7 @@
     "markdown-it-container": "^3.0.0",
     "markdown-it-todo": "^1.0.5",
     "markdown-yaml-metadata-parser": "^2.1.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "raw-loader": "^4.0.1",
     "sass-loader": "^8.0.2",
